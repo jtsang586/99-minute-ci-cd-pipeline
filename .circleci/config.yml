@@ -6,7 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build
+          name: Pre-build
+          command: npm install
+      - run:
+          name: build
           command: npm run build
       - run:
           name: Run Unit Tests
