@@ -9,14 +9,14 @@ jobs:
           name: Pre-build
           command: npm install
       - run:
-          name: build
-          command: npm run build
-      - run:
           name: Run Unit Tests
           command: npm run test
       - run:
+          name: Pre-deploy
+          command: npm run build
+      - run:
           name: Deploy
-          command: npm run start &
+          command: npm run deploy
       - run:
           name: Run Functional Tests
           command: echo "functional tests"
